@@ -18,7 +18,13 @@ export default {
 
     const url = new URL(request.url);
     try {
-      if (url.pathname === "/health") return json({ ok: true, service: "sokorace-api" });
+      if (url.pathname === "/health") return json({ ok: true, service: "sokobanbe" });
+      if (url.pathname === "/env/check") return json({
+        ok: true,
+        hasMongoUri: Boolean(env.MONGODB_URI),
+        hasJwtSecret: Boolean(env.JWT_SECRET),
+        environment: env.ENVIRONMENT
+      });
       if (url.pathname === "/db/ping") return pingDb(env);
       if (url.pathname === "/rooms" && request.method === "POST") return createRaceRoom(request, env);
       if (url.pathname.startsWith("/rooms/")) return handleRoomRequest(request, env, url);
