@@ -1,0 +1,22 @@
+{
+  "name": "@sokorace/backend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local --port 8787",
+    "deploy": "wrangler deploy",
+    "build": "tsc --noEmit",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "jose": "^5.9.6",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.8.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241205.0",
+    "typescript": "^5.7.2",
+    "wrangler": "^4.90.0"
+  }
+}

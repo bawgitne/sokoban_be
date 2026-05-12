@@ -1,0 +1,15 @@
+name = "sokorace-api"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "development"
+
+[[durable_objects.bindings]]
+name = "TOURNAMENT_ROOM"
+class_name = "TournamentRoom"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["TournamentRoom"]
